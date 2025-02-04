@@ -1,0 +1,23 @@
+<!-- card start -->
+<div class="card-container">
+  @for (recipe of recipes; track recipe.recipe_id){
+  <div class="card">
+    <div class="main-content">
+      <h1 class="d-flex flex-row justify-content-center">{{ recipe.title }}</h1>
+      <p class="d-flex flex-row justify-content-center mt-2">
+        {{ recipe.publisher }}
+      </p>
+      <div class="img"><img [src]="recipe.image_url" alt="pizza img " /></div>
+      <div class="buttons">
+        <button type="button" class="btn btn-secondary">
+          <a [href]="recipe.publisher_url" target="_blank">Publisher</a>
+        </button>
+        <button type="button" class="btn btn-info">
+          <a [href]="recipe.source_url">Source</a>
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+<!-- card end -->
